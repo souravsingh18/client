@@ -1,0 +1,22 @@
+.main--container{
+    width: 75%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 25%;
+}
+
+.box{
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-auto-rows: auto; */
+    grid-gap: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.grid-item{
+    height: 300px;
+    background-color: rgb(245, 245, 245);
+}
