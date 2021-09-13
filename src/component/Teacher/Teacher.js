@@ -1,12 +1,18 @@
 import React from 'react'
+import Crud from '../CRUD/Crud'
+
+import {useSelector} from 'react-redux'
+
 import './style.css'
 
-function Teacher() {
+function Teachers() {
+    const result = useSelector(state=>state.teacherReducer.teachers);
+
     return (
         <div className="main--container">
-            Teacher
+            <Crud data={result} name={"TeachersName"}/>
         </div>
     )
 }
 
-export default Teacher
+export default Teachers;

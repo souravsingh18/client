@@ -13,7 +13,7 @@ function Student() {
     
     return (
         <div className="main--container">
-            <Crud students={result}/>
+            <Crud data={result} name={"StudentName"}/>
         </div>
     )
 }

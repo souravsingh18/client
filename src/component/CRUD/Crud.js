@@ -8,8 +8,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
 
 import './style.css'
 
@@ -19,9 +21,8 @@ const useStyles = makeStyles({
   }
 });
 
-
-const Crud = ({students})=> {
-  console.log(students);
+const Crud = ({data,name})=> {
+  console.log(data);
 
   const classes = useStyles();
 
@@ -30,18 +31,33 @@ const Crud = ({students})=> {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Edit</TableCell>
+            <TableCell>{name}</TableCell>
+          <TableCell>Edit</TableCell>
+          <TableCell>Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {students.map((row) => (
+          {data?.map((row) => (
             <TableRow key={row.name}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
+              <TableCell component="th" scope="row">
+              <EditIcon />
+              </TableCell>
+              <TableCell component="th" scope="row">
+              <IconButton aria-label="delete">
+              <DeleteIcon />
+              </IconButton> 
+              </TableCell>
             </TableRow>
           ))}
+          <TableRow>
+            <TableCell>
+            <Button variant="outlined">CREATE
+            </Button>
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

@@ -8,14 +8,16 @@ import Teacher from './component/Teacher/Teacher'
 import NavBar from './component/NavBar/NavBar'
 
 import {getAll,getStudentCounts} from './action/student'
-import {getCoursesCounts} from './action/course'
-import {getTeachersCounts} from './action/teacher'
+import {getCoursesCounts,getAllCourses} from './action/course'
+import {getTeachersCounts,getAllTeachers} from './action/teacher'
 
 import {useDispatch,useSelector} from 'react-redux'
 function App() {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getAll());
+        dispatch(getAllCourses());
+        dispatch(getAllTeachers());
         dispatch(getStudentCounts());
         dispatch(getTeachersCounts());
         dispatch(getCoursesCounts());

@@ -14,7 +14,7 @@ export const getAllCourses = ()=> async (dispatch)=>{
     try {
         const {data} = await api.getAll();
 
-        dispatch({type:"COURSE_GET_ALL",payload: data});
+        dispatch({type:"GET_ALL_COURSE",payload: data});
     } catch (err) {
         console.log(err);
     }

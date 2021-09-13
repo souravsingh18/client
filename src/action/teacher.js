@@ -10,10 +10,10 @@ export const getTeachersCounts = ()=> async (dispatch)=>{
     }
 }
 
-export const getAll = ()=> async (dispatch)=>{
+export const getAllTeachers = ()=> async (dispatch)=>{
     try {
         const {data} = await api.getAll();
-
+        console.log(data);
         dispatch({type:"GET_ALL_TEACHERS",payload: data});
     } catch (err) {
         console.log(err);
