@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API = 'http://localhost:3001/teachers'
+const API = "http://localhost:5001/teachers";
 
-export const getCounts = ()=> axios.get(`${API}/getCounts`)
+export const getCounts = () => axios.get(`${API}/getCounts`);
 
-export const getAll = ()=> axios.get(`${API}/getAll`)
+export const getAll = () => axios.get(`${API}/getAll`);
